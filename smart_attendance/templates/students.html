@@ -1,0 +1,26 @@
+<h2>Students List</h2>
+
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Roll</th>
+        <th>Attendance</th>
+        <th>Status</th>
+    </tr>
+
+    {% for row in data %}
+    <tr>
+        <td>{{row[1]}}</td>
+        <td>{{row[2]}}</td>
+        <td>{{row[3]}}</td>
+
+        <td>
+            {% if row[3] < 75 %}
+                <span style="color:red;">Risk</span>
+            {% else %}
+                <span style="color:green;">Safe</span>
+            {% endif %}
+        </td>
+    </tr>
+    {% endfor %}
+</table>
